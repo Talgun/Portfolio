@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+  <configuration>
+  	<typeAliases>
+ 		<typeAlias type="com.my.spring.dto.ProductVO" alias="product" />
+  		<typeAlias type="com.my.spring.dto.MemberVO" alias="member" />
+  		<typeAlias type="com.my.spring.dto.CartVO" alias="cart"/>
+  		<typeAlias type="com.my.spring.dto.OrderVO" alias="order"/>
+  		<typeAlias type="com.my.spring.dto.QnaVO" alias="qna"/>
+  		<typeAlias type="com.my.spring.dto.WorkerVO" alias="worker"/>
+  	</typeAliases>
+  	
+  	
+  	<!--  SQL 매핑파일 등록 -->
+  	<mappers>
+  		<mapper resource="mappings/product-mapping.xml" />
+  		<mapper resource="mappings/member-mapping.xml" />  		
+  		<mapper resource="mappings/cart-mapping.xml" />  		
+  		<mapper resource="mappings/order-mapping.xml" />  		
+  		<mapper resource="mappings/qna-mapping.xml" />  		
+  		<mapper resource="mappings/admin-mapping.xml" />  		
+  	</mappers>
+  	
+  </configuration>

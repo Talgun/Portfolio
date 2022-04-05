@@ -1,0 +1,66 @@
+header {
+	height: 151px;
+}
+
+body {
+	background-color: white;
+	margin: 0;
+	padding: 0;
+	font-size: 0.75em;
+	line-height: 1.2em;
+	color: #333;
+}
+
+
+
+#wrap {
+	width: 971px;
+	text-align: center;
+	margin: 0px;
+	margin-right: auto;
+	margin-left: auto;
+	min-height: 923px;
+}
+
+
+
+article {
+	min-height: 600px;
+}
+
+
+
+table#productList {
+	border-collapse: collapse; /* border �ъ�댁�� 媛�寃� ���� */
+	border-top: 2px solid #333;
+	border-bottom: 1px solid #333;
+	width: 80%; /* ��泥� ���대� 湲몄�� �ㅼ�� */
+	margin-left: 100px;
+	margin-bottom: 20px;
+}
+
+th, td{ 
+	padding: 8px 5px;
+	
+}
+
+#productList td{ /* ���대��� th �� td 留�吏�怨� �⑤�� 吏��� */
+	padding-right: 40px;
+	text-align: right;
+}
+
+#list td{ 
+	padding: 8px 5px;
+	text-align: left;
+}
+
+table#orderList {
+	border-collapse: collapse; /* border �ъ�댁�� 媛�寃� ���� */
+	border-top: 2px solid #333;
+	border-bottom: 1px solid #333;
+	width: 85%; /* ��泥� ���대� 湲몄�� �ㅼ�� */
+	margin-left: 100px;
+	margin-bottom: 20px;
+}
+
+

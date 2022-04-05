@@ -1,0 +1,142 @@
+/**
+ * 
+ */
+
+/*
+ * 상품 이름으로 조회 
+ */
+function go_search() {
+	$("#prod_form").attr("action", "admin_product_list").submit();
+}
+
+/*
+ * 상품 전체 조회 
+ */
+function go_total() {
+	$("#prod_form").attr("action", "admin_product_list").submit();
+}
+
+/*
+ *  상품 등록화면 출력
+ */
+function go_wrt() {
+	$("#key").val("");  // 검색할 키워드를 빈 문자열로 초기화
+	$("#prod_form").attr("action", "admin_product_write_form").submit();
+}
+
+/*
+*
+* 상품 등록 시에 입력값 확인
+*/
+function go_save() {
+	var $price1 = $("#price1");
+	var $price2 = $("#price2");
+	var $price3 = $("#price3");
+	
+	if ($("#kind").val == "") {
+		alert("상품종류를 입력하세요!")
+		$("#kind").focus();
+	} else if ($("#name").val()=="") {
+	      alert("상품명을 입력하세요!");
+	      $("#name").focus();
+	   } else if ($price1.val()=="") {
+	      alert("판매가를 입력하세요!");
+	      $price1.focus();
+	   } else if ($price2.val()=="") {
+	      alert("할인가를 입력하세요!");
+	      $price2.focus();
+	   } else if (document.getElementsByName("content")[0].value=="") {
+	      alert("상품상세를 입력하세요!");
+	      $("#content").focus();
+	   } else if ($("#product_image").val()=="") {
+	      alert("상품이미지를 입력하세요!");
+	      $("#product_image").focus();
+	   } else {
+		   // 주의: 이미지 파일을 전송하므로 enctype이 설정되어야함.
+		   $("#write_form").attr("encoding", "multipart/form-data");
+		   $("#write_form").attr("action", "admin_product_write").submit();
+	   }
+	
+	
+}
+
+/*
+*   price3 필드 입력: 판매가(price2) - 원가(price1)을 계산하여 설정
+*/
+function go_ab() {
+	var a = $("#price2").val();
+	var b = $("#price1").val();
+	
+	$("#price3").val(a - b);
+}
+
+/*
+ * 상품 상세보기 요청 함수
+ */
+function go_detail(pseq) {
+	$("#prod_form").attr("action", "admin_product_detail?pseq="+pseq)
+				   .submit();
+}
+/*
+ * 상품 수정화면 요청
+ */	
+function go_mod(pseq) {
+	$("#detail_form").attr("action", "admin_product_update_form?pseq="+pseq)
+					 .submit();
+}
+
+/*
+ * 상품 수정 요청
+ */
+function go_mod_save() {
+	var $price1 = $("#price1");
+	var $price2 = $("#price2");
+	var $price3 = $("#price3");
+	
+	if ($("#kind").val == "") {
+		alert("상품종류를 입력하세요!")
+		$("#kind").focus();
+	} else if ($("#name").val()=="") {
+	      alert("상품명을 입력하세요!");
+	      $("#name").focus();
+	   } else if ($price1.val()=="") {
+	      alert("판매가를 입력하세요!");
+	      $price1.focus();
+	   } else if ($price2.val()=="") {
+	      alert("할인가를 입력하세요!");
+	      $price2.focus();
+	   } else if (document.getElementsByName("content")[0].value=="") {
+	      alert("상품상세를 입력하세요!");
+	      $("#content").focus();
+	   } else {
+		   // 베스트 상품 체크 수정
+		   if ($("#bestyn").is(":checked")) {
+			   $("#bestyn").val("y"); 
+		   } else {
+			   $("#bestyn").val("n"); 
+		   }
+		   // 신상품 체크 수정
+		   if ($("#useyn").is(":checked")) {
+			   $("#useyn").val("y"); 
+	       } else {
+	    	   $("#useyn").val("n"); 
+	       }
+		   // 주의: 이미지 파일을 전송하므로 enctype이 설정되어야함.
+		   $("#update_form").attr("encoding", "multipart/form-data");
+		   $("#update_form").attr("action", "admin_product_update").submit();
+	   }   
+	       
+	}
+
+function go_mov() {
+	$("#update_form").attr("action", "admin_product_list").submit();
+}
+
+/*
+ * 상품 상세보기에서 상품목록으로 이동
+ */
+function go_list() {
+	$("#detail_form").attr("action", "admin_product_list").submit();
+}
+
+
